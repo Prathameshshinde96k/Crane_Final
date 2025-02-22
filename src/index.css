@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  --gradient-secondary: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+.glass-card {
+  @apply backdrop-blur-md bg-white/90 border border-white/20 shadow-xl;
+}
+
+.gradient-bg {
+  background: var(--gradient-primary);
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text;
+  background-image: var(--gradient-primary);
+}
+
+.button-gradient {
+  background-image: var(--gradient-secondary);
+  @apply hover:opacity-90 transition-opacity duration-200;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 rounded-full;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300;
+}
+
+.hover-card:hover {
+  @apply transform -translate-y-1;
+}
